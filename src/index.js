@@ -20,9 +20,8 @@ function fizzbuzz() {
       fizzBuzzArray.push("Fizz" + i);
     } else if (i % buzzNum === 0) {
       fizzBuzzArray.push("Buzz" + i);
-    } else {
-      fizzBuzzArray.push(i);
     }
+    continue;
   }
 
   for (const v of fizzBuzzArray) {
