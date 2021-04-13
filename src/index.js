@@ -1,8 +1,8 @@
-function fizzbuzz() {
+const fizzbuzz = () => {
   const fizzNum = Number(document.getElementById("FizzNum").value);
   const buzzNum = Number(document.getElementById("BuzzNum").value);
   const fizzBuzzArray = [];
-  const fizzBuzzError = [];
+  const fizzBuzzText = [];
   const fizzBuzzResult = document.getElementById("fizzbuzz-result");
 
   if (!Number.isInteger(fizzNum) || !Number.isInteger(buzzNum) || fizzNum === 0 || buzzNum === 0) {
@@ -21,17 +21,16 @@ function fizzbuzz() {
     } else if (i % buzzNum === 0) {
       fizzBuzzArray.push("Buzz" + i);
     }
-    continue;
   }
 
   for (const v of fizzBuzzArray) {
-    fizzBuzzError.push("<p>" + v + "</p>");
+    fizzBuzzText.push("<p>" + v + "</p>");
   }
 
-  const fizzBuzzHTML = fizzBuzzError.join("");
+  const fizzBuzzHTML = fizzBuzzText.join("");
 
   fizzBuzzResult.innerHTML = fizzBuzzHTML;
-}
+};
 
-const actionButton = document.querySelector("#actionButton");
+const actionButton = document.getElementById("actionButton");
 actionButton.addEventListener("click", fizzbuzz);
